@@ -26,5 +26,12 @@ public class Polinom {
     public String toString() {
         return "" + list;
     }
+    public int hashCode() {
+        int result = 1;
+        for (int i = 0; i < list.list.size(); i++){
+            result = result + list.list.get(i).hashCode();
+        };
+        return result;
+    }
 
 }
