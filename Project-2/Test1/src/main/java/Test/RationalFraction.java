@@ -29,6 +29,18 @@ public class RationalFraction {
         return (d == 0 ? n : cancellation(d, n % d));
     }
 
+    public static RationalFraction rationalsum(RationalFraction a, RationalFraction b){
+        return new RationalFraction( a.getNum() * b.den + b.getNum() * a.den, a.den * b.den);
+    }
+    public static RationalFraction rationalsub(RationalFraction a, RationalFraction b){
+        return new RationalFraction( a.getNum() * b.den - b.getNum() * a.den, a.den * b.den);
+    }
+    public static RationalFraction rationalmul(RationalFraction a, RationalFraction b){
+        return new RationalFraction(a.getNum() * b.getNum(), a.den * b.den);
+    }
+    public static RationalFraction rationaldiv(RationalFraction a, RationalFraction b){
+        return new RationalFraction(a.getNum() * b.den, a.den * b.getNum());
+    }
     @Override
     public String toString() {
         if (num == 0){
