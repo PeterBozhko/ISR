@@ -22,8 +22,8 @@ public final class App {
         SetOfFractions xxx = new SetOfFractions();
         SetOfFractions yyy = new SetOfFractions();
         xxx.add(f1);
-        xxx.add(f2);
-        yyy.add(f3);
+        //xxx.add(f2);
+        //yyy.add(f3);
         //yyy.add(f4);
         yyy.add(f5);
         System.out.println("Set_1:");
