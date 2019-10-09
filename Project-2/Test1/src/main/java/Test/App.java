@@ -32,7 +32,7 @@ public final class App {
         System.out.println(yyy.toString());
        // System.out.println("Polinom_1:");
        // Polinom x = new Polinom(xxx);
-        //Polinom y = new Polinom(yyy);
+        Polinom y = new Polinom(yyy);
        // System.out.println(x.toString());
         System.out.println("Polinom_2:");
         System.out.println(y.toString());
