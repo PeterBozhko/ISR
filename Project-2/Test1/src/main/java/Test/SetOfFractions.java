@@ -1,4 +1,8 @@
 package Test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SetOfFractions {
@@ -11,7 +15,27 @@ public class SetOfFractions {
             this.add(i);
         }
     }
-    public void add(RationalFraction a){
+    SetOfFractions(String filename){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String line = reader.readLine();
+            while (line != null) {
+                this.add(parser(line));
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e){
+        }
+    }
+    
+    private RationalFraction parser(String line){
+        String arr[] = line.split("/");
+        int num = Integer.parseInt(arr[0]);
+        int den = Integer.parseInt(arr[0]);
+        return new RationalFraction(num, den);
+    }
+
+    public void add(RationalFraction a) {
         list.add(a);
         //isChange = true;
         if (MaxEl != null){
