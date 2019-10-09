@@ -15,6 +15,12 @@ public class Polinom {
             this.list.add(i);
         }
     }
+    Polinom(RationalFraction ... list){
+        this.list = new SetOfFractions();
+        for (RationalFraction i:list){
+            this.list.add(i);
+        }
+    }
 
     @Override
     public String toString() {
