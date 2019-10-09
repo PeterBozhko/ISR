@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class SetOfFractions {
     protected ArrayList<RationalFraction> list = new ArrayList<>();
     private RationalFraction MaxEl, MinEl;
-    private int count, biggerThen, hashBiggerThen;
+    private int count, biggerThen, lessThen, hashBiggerThen, hashLessThen;
     private boolean isChange = false;
 
     SetOfFractions(RationalFraction ... list){
@@ -95,6 +95,33 @@ public class SetOfFractions {
             biggerThen = count;
             isChange = false;
             return biggerThen;
+        }
+    }
+    public int lessThenFraction(RationalFraction a){
+        if (hashLessThen == a.hashCode()){
+            if (isChange){
+                isChange = false;
+                count = 0;
+                for (int i = 0; i < list.size(); i++){
+                    if (a.rationalcmp(list.get(i)) == -1){
+                        count++;
+                    }
+                }
+                lessThen = count;
+            }
+            return lessThen;
+        }
+        else {
+            hashLessThen = a.hashCode();
+            count = 0;
+            for (int i = 0; i < list.size(); i++){
+                if (a.rationalcmp(list.get(i)) == -1){
+                    count++;
+                }
+            }
+            lessThen = count;
+            isChange = false;
+            return lessThen;
         }
     }
     @Override
