@@ -30,10 +30,10 @@ public final class App {
         System.out.println(xxx.toString());
         System.out.println("Set_2:");
         System.out.println(yyy.toString());
-       // System.out.println("Polinom_1:");
-       // Polinom x = new Polinom(xxx);
+        System.out.println("Polinom_1:");
+        Polinom x = new Polinom(xxx);
         Polinom y = new Polinom(yyy);
-       // System.out.println(x.toString());
+        System.out.println(x.toString());
         System.out.println("Polinom_2:");
         System.out.println(y.toString());
         System.out.println("sum of polinoms:");
