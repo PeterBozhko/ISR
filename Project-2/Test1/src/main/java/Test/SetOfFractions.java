@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class SetOfFractions {
     protected ArrayList<RationalFraction> list = new ArrayList<>();
     private RationalFraction MaxEl, MinEl;
-    //private boolean isChange = false;
+    private int count, biggerThen, lessThen, hashBiggerThen, hashLessThen;
+    private boolean isChange = false;
 
     SetOfFractions(RationalFraction ... list){
         for (RationalFraction i:list){
@@ -37,7 +38,7 @@ public class SetOfFractions {
 
     public void add(RationalFraction a) {
         list.add(a);
-        //isChange = true;
+        isChange = true;
         if (MaxEl != null){
             if (a.rationalcmp(MaxEl) == 1){
                 MaxEl = a;
@@ -69,6 +70,60 @@ public class SetOfFractions {
         }
     }
 
+    public int biggerThenFraction(RationalFraction a){
+        if (hashBiggerThen == a.hashCode()){
+            if (isChange){
+                isChange = false;
+                count = 0;
+                for (int i = 0; i < list.size(); i++){
+                    if (a.rationalcmp(list.get(i)) == -1){
+                        count++;
+                    }
+                }
+                biggerThen = count;
+            }
+            return biggerThen;
+        }
+        else {
+            hashBiggerThen = a.hashCode();
+            count = 0;
+            for (int i = 0; i < list.size(); i++){
+                if (a.rationalcmp(list.get(i)) == -1){
+                    count++;
+                }
+            }
+            biggerThen = count;
+            isChange = false;
+            return biggerThen;
+        }
+    }
+    public int lessThenFraction(RationalFraction a){
+        if (hashLessThen == a.hashCode()){
+            if (isChange){
+                isChange = false;
+                count = 0;
+                for (int i = 0; i < list.size(); i++){
+                    if (a.rationalcmp(list.get(i)) == -1){
+                        count++;
+                    }
+                }
+                lessThen = count;
+            }
+            return lessThen;
+        }
+        else {
+            hashLessThen = a.hashCode();
+            count = 0;
+            for (int i = 0; i < list.size(); i++){
+                if (a.rationalcmp(list.get(i)) == -1){
+                    count++;
+                }
+            }
+            lessThen = count;
+            isChange = false;
+            return lessThen;
+        }
+    }
     @Override
     public String toString() {
         return "" + list;
