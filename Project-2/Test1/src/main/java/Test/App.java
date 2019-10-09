@@ -20,6 +20,7 @@ public final class App {
         RationalFraction f4 = new RationalFraction(1,4);
         RationalFraction f5 = new RationalFraction(1,3);
         RationalFraction f6 = new RationalFraction(2, 5);
+        RationalFraction f7 = new RationalFraction(3, 7);
         SetOfFractions xxx = new SetOfFractions();
         SetOfFractions yyy = new SetOfFractions();
         xxx.add(f1);
