@@ -32,6 +32,9 @@ public class RationalFraction {
     public static RationalFraction rationalsum(RationalFraction a, RationalFraction b){
         return new RationalFraction( a.getNum() * b.den + b.getNum() * a.den, a.den * b.den);
     }
+    public static RationalFraction rationalsub(RationalFraction a, RationalFraction b){
+        return new RationalFraction( a.getNum() * b.den - b.getNum() * a.den, a.den * b.den);
+    }
     @Override
     public String toString() {
         if (num == 0){
