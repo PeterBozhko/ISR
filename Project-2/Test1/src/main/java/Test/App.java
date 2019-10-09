@@ -19,6 +19,7 @@ public final class App {
         RationalFraction f3 = new RationalFraction(1,5);
         RationalFraction f4 = new RationalFraction(1,4);
         RationalFraction f5 = new RationalFraction(1,3);
+        RationalFraction f6 = new RationalFraction(2, 5);
         SetOfFractions xxx = new SetOfFractions();
         SetOfFractions yyy = new SetOfFractions();
         xxx.add(f1);
